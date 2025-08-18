@@ -8,23 +8,16 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
 
-  <!-- Favicons -->
   <link href="assets/img/essu_logo.jpg" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
@@ -62,8 +55,6 @@
   </header>
 
   <main class="main">
-
-    <!-- Page Title -->
     <div class="page-title dark-background position-relative" style="background-image: url(assets/img/admin.jpg);">
       <div class="container position-relative">
         <h1>Student Life</h1>
@@ -74,12 +65,10 @@
           </ol>
         </nav>
       </div>
-    </div><!-- End Page Title -->
+    </div>
 
-    <!-- Students Life Section -->
     <section id="students-life" class="students-life section">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <!-- Hero Banner -->
         <div class="students-life-banner" data-aos="zoom-in" data-aos-delay="200">
           <div class="banner-content" data-aos="fade-right" data-aos-delay="300">
             <h2>Live and Learn at ESSU Can-avid</h2>
@@ -87,7 +76,6 @@
           <img src="assets/img/essu.jpg" alt="Campus Life" class="img-fluid">
         </div>
     
-        <!-- Tabs Section -->
         <div class="students-life-tabs mt-5" data-aos="fade-up" data-aos-delay="200">
           <ul class="nav nav-pills mb-4 justify-content-center" id="studentLifeTabs" role="tablist">
             <li class="nav-item" role="presentation">
@@ -103,7 +91,6 @@
           </ul>
     
           <div class="tab-content" id="studentLifeTabsContent">
-            <!-- Clubs & Organizations Tab -->
             <div class="tab-pane fade show active" id="students-life-clubs" role="tabpanel" aria-labelledby="clubs-tab">
               <div class="row g-4">
                 <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
@@ -143,14 +130,11 @@
                         </div>
                       </div>
                     </div>
-    
-                    <!-- <a href="#" class="btn btn-explore mt-4">Explore All Organizations <i class="bi bi-arrow-right"></i></a> -->
                   </div>
                 </div>
               </div>
             </div>
     
-            <!-- Support Services Tab -->
             <div class="tab-pane fade" id="students-life-support" role="tabpanel" aria-labelledby="support-tab">
               <div class="row g-4">
                 <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
@@ -201,42 +185,16 @@
           </div>
         </div>
     
-        <!-- Student Life Gallery -->
         <div class="students-life-gallery mt-5" data-aos="fade-up" data-aos-delay="200">
           <div class="section-header text-center">
             <h3>Life at ESSU Can-avid</h3>
             <p>See how our students grow and thrive together</p>
           </div>
-    
-          <div class="row g-3">
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-              <a href="assets/img/img1.png" class="gallery-item glightbox">
-                <img src="assets/img/img1.png" class="img-fluid" loading="lazy" alt="Student Life">
-                <div class="gallery-overlay">
-                  <span>Campus Celebrations</span>
-                </div>
-              </a>
-            </div>
-    
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-              <a href="assets/img/img2.png" class="gallery-item glightbox">
-                <img src="assets/img/img2.png" class="img-fluid" loading="lazy" alt="Student Life">
-                <div class="gallery-overlay">
-                  <span>Student Organizations</span>
-                </div>
-              </a>
-            </div>
-    
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
-              <a href="assets/img/img3.png" class="gallery-item glightbox">
-                <img src="assets/img/img3.png" class="img-fluid" loading="lazy" alt="Student Life">
-                <div class="gallery-overlay">
-                  <span>Graduation Ceremonies</span>
-                </div>
-              </a>
-            </div>
+
+          <div class="row g-3" id="student-life-gallery">
           </div>
         </div>
+
       </div>
     </section>
     
@@ -295,14 +253,81 @@
     </div>
 
   </footer>
-
-  <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
+  <!-- Supabase JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const supabaseUrl = 'https://kpqqmdewmtbbdjykkrny.supabase.co'
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtwcXFtZGV3bXRiYmRqeWtrcm55Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI5NjQ3NzEsImV4cCI6MjA2ODU0MDc3MX0.OAVzofMuM6ZdD6-r2c_IYT9ZE77SHlgTNVXKtwBZvl0'
+    const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+    // Keep reference to lightbox
+    let studentLifeLB = null
+
+    async function loadStudentLife() {
+      const wrap = document.getElementById('student-life-gallery')
+
+      const { data, error } = await supabase
+        .from('student_life')
+        .select('id,title,image')
+        .order('id', { ascending: true })
+
+      if (error) {
+        console.error('Error fetching gallery:', error)
+        wrap.innerHTML = `<div class="col-12 text-center text-danger">Failed to load gallery.</div>`
+        return
+      }
+
+      if (!data || data.length === 0) {
+        wrap.innerHTML = `<div class="col-12 text-center text-muted">No photos available yet.</div>`
+        return
+      }
+
+      // Build gallery items
+      wrap.innerHTML = data.map((item, i) => {
+        const delay = (i + 1) * 100
+        const title = item.title ?? 'Student Life'
+        const alt = title
+
+        return `
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="${delay}">
+            <a
+              href="${item.image}"
+              class="gallery-item glightbox"
+              data-gallery="student-life"
+              data-title="${title.replace(/"/g, '&quot;')}"
+            >
+              <img src="${item.image}" class="img-fluid" loading="lazy" alt="${alt.replace(/"/g, '&quot;')}">
+              <div class="gallery-overlay">
+                <span>${title}</span>
+              </div>
+            </a>
+          </div>
+        `
+      }).join('')
+
+      // Init or reload glightbox
+      if (!studentLifeLB) {
+        studentLifeLB = GLightbox({
+          selector: '.students-life-gallery .glightbox',
+          touchNavigation: true,
+          loop: true
+        })
+      } else {
+        studentLifeLB.reload()
+      }
+
+      // Refresh AOS if used
+      if (window.AOS && typeof AOS.refreshHard === 'function') {
+        AOS.refreshHard()
+      }
+    }
+
+    loadStudentLife()
+  </script>
+
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -311,10 +336,7 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-
-  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>
